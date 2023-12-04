@@ -1,20 +1,16 @@
-/* Basic Style */ 
+
 body { 
     background: #fff; 
-    color: #333; 
-    font-family: Lato, sans-serif; 
-    background: #B2FEFA; 
-    /* fallback for old browsers */ 
-    background: -webkit-linear-gradient(to right, #0ED2F7, #B2FEFA); 
-    /* Chrome 10-25, Safari 5.1-6 */ 
-    background: linear-gradient(to right, #0ED2F7, #B2FEFA); 
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+    color: black; 
+    font-family: 'Times New Roman', Times, serif; 
+    background: -webkit-linear-gradient(to right, #bd1857, #e8e8e8); 
+    background: linear-gradient(to right, #ff0000, #c12b62); 
 } 
 
 #title { 
     margin-top: 5px; 
     font-size: 50px; 
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    font-family: Arial, Helvetica, sans-serif; 
     text-align: center; 
 } 
 
@@ -45,8 +41,8 @@ button {
 } 
 
 button { 
-    background-color: #008CBA; 
-    border: none; 
+    background-color: grey; 
+    border: 1; 
     color: white; 
     padding: 15px 32px; 
     text-align: center; 
@@ -64,7 +60,6 @@ button:hover {
     cursor: pointer; 
 } 
 
-/* Heading */ 
 h3, 
 label[for='new-task'] { 
     color: #333; 
@@ -93,7 +88,6 @@ input[type="text"]:focus {
     color: #333; 
 } 
 
-/* New Task */ 
 label[for='new-task'] { 
     display: block; 
     margin: 0 0 20px; 
@@ -103,7 +97,6 @@ input#new-task {
     float: left; 
     width: 318px; 
 } 
-/* Task list */ 
 
 li {     
     overflow: hidden; 
@@ -132,13 +125,11 @@ li>.delete:hover {
     color: #CF2323; 
 } 
 
-/* Completed */ 
 #completed-tasks label { 
     text-decoration: line-through; 
     color: #888; 
 } 
 
-/* Edit Task */ 
 ul li input[type=text] { 
     display: none; 
 } 
@@ -156,3 +147,10 @@ ul li.editMode label {
     float: right; 
     text-align: center; 
 } 
+
+.section5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; 
+}
