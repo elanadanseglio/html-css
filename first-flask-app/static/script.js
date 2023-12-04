@@ -4,11 +4,13 @@ let incompleteTasks = document.getElementById("incomplete-tasks");
 let completedTasks = document.getElementById("completed-tasks");
 let clearButton = document.getElementById("clear");
 let loginButton = document.getElementById("login");
-let signUpButton = document.getElementById("signUp");
+let signUpButton = document.getElementById("sign-up");
 
 let users = [
     {username: 'spongebob', password: 'squarepants'},
     {username: 'sandy', password: 'cheeks'},
+    {username: 'patrick', password: 'star'},
+    {username: 'larry', password: 'lobster'},
 ];
 
 let addTask = function(){
@@ -105,12 +107,6 @@ let login = function() {
     } else {
         alert("Invalid.")
     };
-    // if (input == null || input == ""){
-    //     text = "Invalid username/password.";
-    // } else {
-    //     text = "Hello " + input;
-    // }
-    // alert(text);
 }
 loginButton.addEventListener('click', login)
 
@@ -118,15 +114,21 @@ let checkCredentials = function(username, password) {
     return users.some(user => user.username === username && user.password === password);
   };
 
-// let signUp = function(){
-//     let input = prompt("Enter a username and password to use.", "Username");
-//     let text;
-//     if (input == null || input == ""){
-//         text = "Invalid username/password.";
-//     } else {
-//         text = "Welcome " + input + "!";
-//         saveUser(text);
-//     }
-//     alert(text);
-// }
-// signUpButton.addEventListener('click', signUp);
+  let signUp = function () {
+    let username = prompt("Enter a username:");
+    let password = prompt("Enter a password:");
+
+    if (!username || !password) {
+        alert("Invalid username/password.");
+    } else {
+        // Check if the username already exists
+        if (users.some(user => user.username === username)) {
+            alert("Username already exists. Please choose another one.");
+        } else {
+            // Add the new user to the users list
+            users.push({ username, password });
+            alert("Welcome, " + username + "!");
+        }
+    }
+};
+signUpButton.addEventListener('click', signUp);
